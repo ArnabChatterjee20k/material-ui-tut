@@ -3,6 +3,7 @@ import Notes from './pages/Notes'
 import Create from './pages/Create'
 import Font from './Tutorials/Font';
 import Button_tut from './Tutorials/Button_tut';
+import Icons_tut from './Tutorials/Icons_tut';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         {/* Tutorials */}
         <Route path="/typography" component={Font}/>
         <Route path="/buttons" component={Button_tut}/>
+        <Route path="/icons" component={Icons_tut}/>
 
         {/* Application code */}
         <Route exact path="/">
