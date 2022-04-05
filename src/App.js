@@ -5,6 +5,7 @@ import Font from './Tutorials/Font';
 import Button_tut from './Tutorials/Button_tut';
 import Icons_tut from './Tutorials/Icons_tut';
 import Style_tut from './Tutorials/Style_tut';
+import Custom_theme from './Tutorials/Custom_theme';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/buttons" component={Button_tut}/>
         <Route path="/icons" component={Icons_tut}/>
         <Route path="/style" component={Style_tut}/>
+        <Route path="/themes" component={Custom_theme}/>
 
         {/* Application code */}
         <Route exact path="/">
