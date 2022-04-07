@@ -1,13 +1,17 @@
 import React from 'react'
 import { Typography } from '@mui/material'
 import Button from '@mui/material/Button'
-import { Container } from '@mui/material'
+import Container  from '@mui/material/Container'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { TextField } from '@mui/material';
+import TextField from '@mui/material/TextField';
 import { makeStyles } from '@mui/styles';
-
 import { useState } from 'react';
 
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import  FormLabel  from '@mui/material/FormLabel';
+import FormControl from '@mui/material/FormControl'
 export default function Notes() {
 
   function handle_submit(e){
@@ -17,13 +21,17 @@ export default function Notes() {
     setError(false)
     
     title.length>0||detail.length>0
-    ? alert(`${title} ${detail}`)
+    ? alert(`${title} ${detail} ${category}`)
     : setError(true)
   }
 
   const [title,setTitle] = useState('');
   const [detail,setdetail] = useState('');
   const [Error,setError] = useState(false);
+
+  const values = ["work","school","code","other"]
+
+  const [category,setCategory] = useState(values[3])
   const useStyles = makeStyles({
     form: {
       marginTop: 20,
@@ -63,6 +71,15 @@ export default function Notes() {
           onChange={(e) => setdetail(e.target.value)}
           error={Error}
         />
+        <FormControl className={classes.form}>
+          <FormLabel color="primary">Category</FormLabel>
+          <RadioGroup value={category} onChange={(e)=>setCategory(e.target.value)}>
+            {values.map((element,index)=>{
+              return <FormControlLabel key={index} value={element} control={<Radio color="secondary" />} label={element} />
+            })}
+          </RadioGroup>
+        </FormControl>
+        <br />
       <Button endIcon={<ArrowForwardIosIcon />} type='submit' color='error' variant='contained'>Submit</Button>
       </form>
 
