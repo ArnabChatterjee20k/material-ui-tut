@@ -8,6 +8,7 @@ import Style_tut from './Tutorials/Style_tut';
 import Custom_theme from './Tutorials/Custom_theme';
 import Text_Field from './Tutorials/Text_Field';
 import radio_tut from './Tutorials/radio_tut';
+import Grid_tut from './Tutorials/Grid_tut';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/themes" component={Custom_theme} exact/>
         <Route path="/textfield" component={Text_Field} exact/>
         <Route path="/radio" component={radio_tut} exact/>
+        <Route path="/grid" component={Grid_tut} exact/>
 
         {/* Application code */}
         <Route exact path="/">
