@@ -1,0 +1,22 @@
+{
+    "notes":[
+        {
+            "title":"Note 1",
+            "details":"This is note 1",
+            "category":"work",
+            "id":1
+        },
+        {
+            "title":"Note 2",
+            "details":"This is note 2",
+            "category":"personal",
+            "id":2
+        },
+        {
+            "title":"Note 3",
+            "details":"This is note 3",
+            "category":"work",
+            "id":3
+        }
+    ]
+}
