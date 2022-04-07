@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Notes from './pages/Notes'
-import Create from './pages/Create'
+import View from './pages/View'
 import Font from './Tutorials/Font';
 import Button_tut from './Tutorials/Button_tut';
 import Icons_tut from './Tutorials/Icons_tut';
@@ -26,8 +26,8 @@ function App() {
         <Route exact path="/">
           <Notes />
         </Route>
-        <Route path="/create">
-          <Create />
+        <Route path="/view">
+          <View />
         </Route>
       </Switch>
     </Router>

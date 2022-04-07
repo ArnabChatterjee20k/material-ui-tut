@@ -12,7 +12,12 @@ import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import  FormLabel  from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl'
+
+import { useHistory } from 'react-router-dom';
+
 export default function Notes() {
+
+  const history = useHistory();
 
   function handle_submit(e){
     e.preventDefault();
@@ -21,7 +26,7 @@ export default function Notes() {
     setError(false)
     
     title.length>0||detail.length>0
-    ? alert(`${title} ${detail} ${category}`)
+    ? fetch("http://localhost:3001/notes",{headers:{'Content-Type':'application/json'},method:"POST",body:JSON.stringify({title:title,detail:detail,category:category})}).then(()=>history.push("/view")) 
     : setError(true)
   }
 
