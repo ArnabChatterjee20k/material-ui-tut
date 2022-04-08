@@ -9,7 +9,7 @@ import Custom_theme from './Tutorials/Custom_theme';
 import Text_Field from './Tutorials/Text_Field';
 import radio_tut from './Tutorials/radio_tut';
 import Grid_tut from './Tutorials/Grid_tut';
-
+import Card_tut from './Tutorials/Card_tut';
 function App() {
   return (
     <Router>
@@ -23,6 +23,7 @@ function App() {
         <Route path="/textfield" component={Text_Field} exact/>
         <Route path="/radio" component={radio_tut} exact/>
         <Route path="/grid" component={Grid_tut} exact/>
+        <Route path="/card" component={Card_tut} exact/>
 
         {/* Application code */}
         <Route exact path="/">
