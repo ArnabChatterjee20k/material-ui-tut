@@ -13,10 +13,17 @@ import { makeStyles } from '@mui/styles';
 
 export default function Notes_card({note,handle_delete}) {
     const {title,detail,category,id} = note;
+    const colors = {
+        personal:"blue",
+        work:"cyan",
+        school:"green",
+        code:"red",
+        other:"purple"
+    }
     // using makestyles to change the border accordingly
     const useStyle = makeStyles({
         card_border:{
-            border:(note)=> category==="code"?"2px solid red":"2px solid green"
+            border:()=> `2px solid ${colors[category]}`
         }
     })
 

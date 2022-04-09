@@ -15,6 +15,8 @@ import { AddCircleOutlined, SubjectOutlined } from '@mui/icons-material';
 // React router dom hooks
 import { useHistory , useLocation } from 'react-router-dom';
 
+// date-fns
+import {format} from "date-fns" 
 
 function Layout(props) {
     // constants
@@ -57,6 +59,9 @@ function Layout(props) {
         },
         navbar:{
             width:`calc(100% - ${drawerWidth}px) !important`
+        },
+        date:{
+            flexGrow:1 // taking all the possible horizontal space
         }
     })
     const classes = useStyles()
@@ -67,8 +72,11 @@ function Layout(props) {
             {/* app bar */}
             <AppBar elevation={1} sx={{background:"#f5f5f5",color:"black"}}  className={classes.navbar}>
                 <Toolbar>
-                    <Typography variant='h5'>
-                    
+                    <Typography variant='h5' className={classes.date}>
+                        Today is the {format(new Date() , "do MMMM Y")}
+                    </Typography>
+                    <Typography>
+                        Mario
                     </Typography>
                 </Toolbar>
             </AppBar>
