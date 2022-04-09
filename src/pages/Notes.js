@@ -1,4 +1,4 @@
-import React from 'react'
+// Material ui elements
 import { Typography } from '@mui/material'
 import Button from '@mui/material/Button'
 import Container  from '@mui/material/Container'
@@ -13,6 +13,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import  FormLabel  from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl'
 
+// React router dom hooks
 import { useHistory } from 'react-router-dom';
 
 export default function Notes() {
@@ -46,7 +47,7 @@ export default function Notes() {
   const classes = useStyles()
   return (
     <Container className='notes'>
-      <Typography variant='h6' component="h2" color="textSecondary" gutterBottom={true}>
+      <Typography variant='h6' component="h2" color="textSecondary" gutterBottom={true} sx={{paddingTop:"1em"}}>
         Create a New Note
       </Typography>
 

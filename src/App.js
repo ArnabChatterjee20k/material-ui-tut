@@ -1,4 +1,8 @@
+// Importing the wrapper layout
+import Layout from './pages/Layout';
+// React router dom
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+// Tutorial links
 import Notes from './pages/Notes'
 import View from './pages/View'
 import Font from './Tutorials/Font';
@@ -11,7 +15,6 @@ import radio_tut from './Tutorials/radio_tut';
 import Grid_tut from './Tutorials/Grid_tut';
 import Card_tut from './Tutorials/Card_tut';
 
-import Layout from './pages/Layout';
 function App() {
   return (
     <Router>

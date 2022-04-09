@@ -1,4 +1,4 @@
-import { Container } from '@mui/material'
+// material ui
 import Drawer from '@mui/material/Drawer';
 import { AppBar } from '@mui/material'
 import Typography from '@mui/material/Typography'
@@ -10,9 +10,11 @@ import { ListItem } from '@mui/material';
 import { ListItemIcon } from '@mui/material';
 import { ListItemText } from '@mui/material';
 import { AddCircleOutlined, SubjectOutlined } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+
+// React router dom hooks
 import { useHistory , useLocation } from 'react-router-dom';
 
+// for 
 function Layout(props) {
     // constants
     const history = useHistory();
@@ -32,7 +34,7 @@ function Layout(props) {
     ]
 
     // styles
-    const useStyles = makeStyles({
+    const useStyles = makeStyles( {
         root: {
             display: 'flex',
         },
@@ -48,6 +50,9 @@ function Layout(props) {
         },
         active:{
             background:"#f4f4f4 !important"
+        },
+        title:{
+            padding:"20px"
         }
     })
     const classes = useStyles()
@@ -67,7 +72,7 @@ function Layout(props) {
                 }}
             >
                 <div>
-                    <Typography variant='h5' align='center' >
+                    <Typography variant='h5' align='center' className={classes.title}>
                         Side Drawer
                     </Typography>
 
