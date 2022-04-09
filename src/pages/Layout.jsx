@@ -1,7 +1,8 @@
 // material ui
 import Drawer from '@mui/material/Drawer';
-import { AppBar } from '@mui/material'
 import Typography from '@mui/material/Typography'
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 import { makeStyles } from '@mui/styles'
 
 // For list component
@@ -14,7 +15,7 @@ import { AddCircleOutlined, SubjectOutlined } from '@mui/icons-material';
 // React router dom hooks
 import { useHistory , useLocation } from 'react-router-dom';
 
-// for 
+
 function Layout(props) {
     // constants
     const history = useHistory();
@@ -53,6 +54,9 @@ function Layout(props) {
         },
         title:{
             padding:"20px"
+        },
+        navbar:{
+            width:`calc(100% - ${drawerWidth}px) !important`
         }
     })
     const classes = useStyles()
@@ -61,7 +65,13 @@ function Layout(props) {
     return (
         <div className={`first ${classes.root}`}>
             {/* app bar */}
-
+            <AppBar elevation={1} sx={{background:"#f5f5f5",color:"black"}}  className={classes.navbar}>
+                <Toolbar>
+                    <Typography variant='h5'>
+                        Welcome to ninja notes
+                    </Typography>
+                </Toolbar>
+            </AppBar>
             {/* side drawer */}
             <Drawer
                 className={classes.drawer}
