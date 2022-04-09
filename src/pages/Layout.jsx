@@ -68,7 +68,7 @@ function Layout(props) {
             <AppBar elevation={1} sx={{background:"#f5f5f5",color:"black"}}  className={classes.navbar}>
                 <Toolbar>
                     <Typography variant='h5'>
-                        Welcome to ninja notes
+                    
                     </Typography>
                 </Toolbar>
             </AppBar>
