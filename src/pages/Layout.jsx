@@ -1,12 +1,32 @@
 import { Container } from '@mui/material'
 import Drawer from '@mui/material/Drawer';
+import { AppBar } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { makeStyles } from '@mui/styles'
 
-import { AppBar } from '@mui/material'
+// For list component
+import List from '@mui/material/List'
+import { ListItem } from '@mui/material';
+import { ListItemIcon } from '@mui/material';
+import { ListItemText } from '@mui/material';
+import { AddCircleOutlined, SubjectOutlined } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 function Layout(props) {
     const drawerWidth = 240;
+    const menuItems = [
+        {
+            text: 'My Notes',
+            icon: <SubjectOutlined color='secondary' />,
+            path: "/view"
+        },
+        {
+            text: 'Create Notes',
+            icon: <AddCircleOutlined color='secondary' />,
+            path: "/"
+        }
+    ]
+
     const useStyles = makeStyles({
         root: {
             display: 'flex',
@@ -37,9 +57,25 @@ function Layout(props) {
                 }}
             >
                 <div>
-                    <Typography color='secondary' variant='h5'>
+                    <Typography variant='h5' align='center' >
                         Side Drawer
                     </Typography>
+
+                    {/* List and links */}
+                    <List>
+                        {
+                            menuItems.map((item) => (
+                                <ListItem
+                                    button
+                                    key={item.text}
+                                >
+                                    <ListItemIcon>{item.icon}</ListItemIcon>
+                                    <ListItemText>{item.text}</ListItemText>
+                                </ListItem>
+                            ))
+                        }
+                    </List>
+
                 </div>
             </Drawer>
             <div className={classes.page}>
