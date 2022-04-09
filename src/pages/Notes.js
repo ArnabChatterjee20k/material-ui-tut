@@ -45,7 +45,7 @@ export default function Notes() {
   })
   const classes = useStyles()
   return (
-    <Container >
+    <Container className='notes'>
       <Typography variant='h6' component="h2" color="textSecondary" gutterBottom={true}>
         Create a New Note
       </Typography>

@@ -11,8 +11,11 @@ import { ListItemIcon } from '@mui/material';
 import { ListItemText } from '@mui/material';
 import { AddCircleOutlined, SubjectOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Layout(props) {
+    // constants
+    const history = useHistory();
     const drawerWidth = 240;
     const menuItems = [
         {
@@ -27,6 +30,7 @@ function Layout(props) {
         }
     ]
 
+    // styles
     const useStyles = makeStyles({
         root: {
             display: 'flex',
@@ -43,6 +47,8 @@ function Layout(props) {
         }
     })
     const classes = useStyles()
+
+    // rednering the component
     return (
         <div className={`first ${classes.root}`}>
             {/* app bar */}
@@ -65,13 +71,14 @@ function Layout(props) {
                     <List>
                         {
                             menuItems.map((item) => (
-                                <ListItem
-                                    button
-                                    key={item.text}
-                                >
-                                    <ListItemIcon>{item.icon}</ListItemIcon>
-                                    <ListItemText>{item.text}</ListItemText>
-                                </ListItem>
+                                    <ListItem
+                                        button
+                                        key={item.text}
+                                        onClick = {()=>history.push(item.path)}
+                                    >
+                                        <ListItemIcon>{item.icon}</ListItemIcon>
+                                        <ListItemText>{item.text}</ListItemText>
+                                    </ListItem>
                             ))
                         }
                     </List>

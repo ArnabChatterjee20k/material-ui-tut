@@ -21,7 +21,7 @@ export default function View() {
     setNotes(new_note)
   }
   return (
-    <Container sx={{padding:10}}>
+    <Container sx={{padding:10}} className="view">
       <Grid container spacing={3}>
         {notes.map(note => (
           <Grid item key={note.id} sm={12} xs={6} md={6} lg={4}>
