@@ -1,12 +1,6 @@
 {
   "notes": [
     {
-      "title": "Note 1",
-      "detail": "This is note 1",
-      "category": "work",
-      "id": 1
-    },
-    {
       "title": "Note 2",
       "detail": "This is note 2",
       "category": "personal",
