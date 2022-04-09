@@ -5,7 +5,7 @@ import { makeStyles } from '@mui/styles'
 import { Button } from '@mui/material'
 function Style_tut() {
     // making styles using object
-    const useStyles = makeStyles({
+    const style_options = {
         root: {
             backgroundColor: '#f5f5f5',
             padding: '20px',
@@ -39,7 +39,10 @@ function Style_tut() {
                 backgroundColor: 'red',
             }
         }
-    })
+    }
+    // const useStyles = makeStyles(style_options)
+    // using it with a function
+    const useStyles = makeStyles((theme)=>style_options) // now we can use that theme argument to make dynamic changes
 
     const classes = useStyles()
 
