@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { makeStyles } from '@mui/styles'
+import { Avatar } from '@mui/material';
 
 // For list component
 import List from '@mui/material/List'
@@ -17,6 +18,7 @@ import { useHistory , useLocation } from 'react-router-dom';
 
 // date-fns
 import {format} from "date-fns" 
+import { deepOrange } from '@mui/material/colors';
 
 function Layout(props) {
     // constants
@@ -44,6 +46,7 @@ function Layout(props) {
         page: {
             background: "#f9f9f9",
             width: "100%",
+            minHeight:"100vh"
         },
         drawer: {
             width: drawerWidth,
@@ -78,6 +81,7 @@ function Layout(props) {
                     <Typography>
                         Mario
                     </Typography>
+                    <Avatar sx={{ bgcolor: deepOrange[500] , margin:"5px"}}>N</Avatar>
                 </Toolbar>
             </AppBar>
             {/* side drawer */}
